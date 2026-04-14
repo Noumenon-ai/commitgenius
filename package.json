@@ -1,0 +1,54 @@
+{
+  "name": "commitgenius",
+  "version": "1.0.0",
+  "description": "AI-powered git commit messages that actually understand your code. Uses Claude to read your diff and write specific, meaningful conventional commits.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "commitgenius": "bin/commitgenius.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "message",
+    "ai",
+    "claude",
+    "anthropic",
+    "conventional-commits",
+    "developer-tools",
+    "cli",
+    "git-hook",
+    "productivity",
+    "llm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Noumenon-ai/commitgenius"
+  },
+  "homepage": "https://github.com/Noumenon-ai/commitgenius#readme",
+  "bugs": {
+    "url": "https://github.com/Noumenon-ai/commitgenius/issues"
+  },
+  "author": "Noumenon AI",
+  "files": [
+    "dist/",
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.3"
+  }
+}
