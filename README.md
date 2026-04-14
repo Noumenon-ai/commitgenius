@@ -207,3 +207,5 @@ PRs welcome. Please follow conventional commits (use commitgenius to write your 
 ## License
 
 MIT
+---
+Built by [Noumenon](https://github.com/Noumenon-ai)
