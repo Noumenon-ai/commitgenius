@@ -187,7 +187,7 @@ async function callAnthropic(apiKey: string, model: string, prompt: string): Pro
 async function callClaudeCli(prompt: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const child = execFile("claude", ["-p", prompt], {
-      timeout: 60_000,
+      timeout: 120_000,
       maxBuffer: 1024 * 1024,
     }, (error, stdout, stderr) => {
       if (error) {
@@ -196,6 +196,9 @@ async function callClaudeCli(prompt: string): Promise<string> {
       }
       resolve(stdout.trim());
     });
+    // The prompt is passed as an argument; close stdin so the CLI does
+    // not sit waiting for piped input before responding.
+    child.stdin?.end();
   });
 }
 
