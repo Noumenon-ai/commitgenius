@@ -24,7 +24,7 @@ export type LoadedConfig = {
 
 const DEFAULT_CONFIG: AppConfig = {
   backend: "api",
-  model: "claude-sonnet-4-20250514",
+  model: "claude-sonnet-4-6",
   language: "English",
   rules: [],
   scopes: [],
