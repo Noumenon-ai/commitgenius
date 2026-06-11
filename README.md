@@ -34,9 +34,20 @@ commitgenius is different:
 
 ## Install
 
+From source (this package is not published to npm):
+
 ```bash
-npm install -g commitgenius
+git clone https://github.com/Noumenon-ai/commitgenius.git
+cd commitgenius
+npm install
+npm run build
+npm link
+
+commitgenius --help
 ```
+
+`npm link` puts the `commitgenius` command on your PATH. To remove it
+later: `npm unlink -g commitgenius`.
 
 ## Setup
 
@@ -111,7 +122,7 @@ Config lives at `~/.commitgenius.json`:
 ```json
 {
   "backend": "api",
-  "model": "claude-sonnet-4-20250514",
+  "model": "claude-sonnet-4-6",
   "language": "English",
   "maxDiffLines": 500,
   "maxOptions": 3,
@@ -127,7 +138,7 @@ Config lives at `~/.commitgenius.json`:
 |-------|---------|-------------|
 | `backend` | `"api"` | `"api"` for Anthropic SDK, `"cli"` for `claude -p` |
 | `apiKey` | — | Anthropic API key (or use `ANTHROPIC_API_KEY` env var) |
-| `model` | `"claude-sonnet-4-20250514"` | Any Claude model ID |
+| `model` | `"claude-sonnet-4-6"` | Any Claude model ID |
 | `language` | `"English"` | Language for commit messages |
 | `maxDiffLines` | `500` | Truncate diffs beyond this |
 | `maxOptions` | `3` | Number of commit message options |
@@ -196,7 +207,7 @@ git diff --staged
 
 ## Requirements
 
-- Node.js >= 18
+- Node.js >= 22.13.1
 - Git
 - Anthropic API key OR Claude Code CLI
 
