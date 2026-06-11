@@ -218,14 +218,14 @@ async function handleHookCommand(projectDir: string, subcommand: string | undefi
   if (subcommand === "install") {
     const result = await installHook(projectDir);
     const verb = result.changed ? "Installed" : "Hook already installed at";
-    console.log(`${colorize("✓", "green")} ${verb} ${result.hookPath}`);
+    console.log(`${colorize("OK", "green")} ${verb} ${result.hookPath}`);
     return EXIT_SUCCESS;
   }
 
   if (subcommand === "uninstall") {
     const result = await uninstallHook(projectDir);
     const verb = result.changed ? "Removed managed hook block from" : "No CommitGenius block found in";
-    console.log(`${colorize("✓", "green")} ${verb} ${result.hookPath}`);
+    console.log(`${colorize("OK", "green")} ${verb} ${result.hookPath}`);
     return EXIT_SUCCESS;
   }
 
@@ -280,7 +280,7 @@ async function generateFlow(projectDir: string, args: ParsedArgs): Promise<numbe
 
     if (args.hookMessageFile) {
       await writeHookCommitMessage(args.hookMessageFile, projectDir, formatCommitMessage(selection.option));
-      console.log(`${colorize("✓", "green")} Prepared commit message in ${args.hookMessageFile}`);
+      console.log(`${colorize("OK", "green")} Prepared commit message in ${args.hookMessageFile}`);
       return EXIT_SUCCESS;
     }
 
@@ -290,7 +290,7 @@ async function generateFlow(projectDir: string, args: ParsedArgs): Promise<numbe
     }
 
     createCommit(projectDir, selection.option, payload.fingerprint);
-    console.log(`${colorize("✓", "green")} Commit created`);
+    console.log(`${colorize("OK", "green")} Commit created`);
     return EXIT_SUCCESS;
   }
 }
@@ -326,7 +326,7 @@ async function main(): Promise<number> {
     }
 
     const saved = await runConfigWizard(loaded);
-    console.log(`${colorize("✓", "green")} Saved config to ${saved.path}`);
+    console.log(`${colorize("OK", "green")} Saved config to ${saved.path}`);
     return EXIT_SUCCESS;
   }
 
