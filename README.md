@@ -34,20 +34,21 @@ commitgenius is different:
 
 ## Install
 
-From source (this package is not published to npm):
-
 ```bash
-git clone https://github.com/Noumenon-ai/commitgenius.git
-cd commitgenius
-npm install
-npm run build
-npm link
+npm install -g @noumenon-ai/commitgenius
 
 commitgenius --help
 ```
 
-`npm link` puts the `commitgenius` command on your PATH. To remove it
-later: `npm unlink -g commitgenius`.
+The package is published as `@noumenon-ai/commitgenius` (the unscoped
+name is reserved on npm), but the command it installs is plain
+`commitgenius`. To remove it later: `npm uninstall -g @noumenon-ai/commitgenius`.
+
+Or run it without installing:
+
+```bash
+npx @noumenon-ai/commitgenius
+```
 
 ## Setup
 

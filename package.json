@@ -1,5 +1,5 @@
 {
-  "name": "commitgenius",
+  "name": "@noumenon-ai/commitgenius",
   "version": "1.0.0",
   "description": "AI-powered git commit messages that actually understand your code. Uses Claude to read your diff and write specific, meaningful conventional commits.",
   "license": "MIT",
